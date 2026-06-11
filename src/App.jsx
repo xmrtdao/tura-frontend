@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { Car, MapPin, Calendar, Users, Star, Shield, Heart, Search, Menu, X, ChevronRight, Fuel, Gauge, Settings, Wifi } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchLocation, setSearchLocation] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
 
   const featuredCars = [
     {
@@ -140,11 +136,7 @@ function App() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="md:hidden bg-white border-t"
-          >
+          <div className="md:hidden bg-white border-t">
             <div className="px-4 py-4 space-y-4">
               <a href="#explorar" className="block text-tura-dark hover:text-tura-red">Explorar</a>
               <a href="#como-funciona" className="block text-tura-dark hover:text-tura-red">Cómo funciona</a>
@@ -152,7 +144,7 @@ function App() {
               <button className="btn-secondary w-full">Iniciar sesión</button>
               <button className="btn-primary w-full">Registrarse</button>
             </div>
-          </motion.div>
+          </div>
         )}
       </nav>
 
@@ -160,11 +152,7 @@ function App() {
       <section className="relative bg-gradient-to-br from-tura-red via-red-600 to-red-800 text-white py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+            <div>
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
                 Tu auto perfecto te está esperando
               </h1>
@@ -180,20 +168,15 @@ function App() {
                   Registrar mi auto
                 </button>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden lg:block"
-            >
+            <div className="hidden lg:block">
               <img 
                 src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800" 
                 alt="Auto en carretera"
                 className="rounded-2xl shadow-2xl"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -254,16 +237,13 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 className="text-center"
               >
                 <div className="text-4xl lg:text-5xl font-bold text-tura-red mb-2">{stat.number}</div>
                 <div className="text-red-200">{stat.label}</div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -283,12 +263,8 @@ function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredCars.map((car, index) => (
-              <motion.div
+              <div
                 key={car.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="card group cursor-pointer"
               >
                 <div className="relative overflow-hidden">
@@ -332,7 +308,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -359,12 +335,8 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="text-center p-8 rounded-2xl bg-tura-light hover:shadow-lg transition"
               >
                 <div className="bg-tura-red text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -372,7 +344,7 @@ function App() {
                 </div>
                 <h3 className="text-xl font-bold text-tura-dark mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
