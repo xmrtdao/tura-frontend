@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #F1FAEE;
+  color: #1D3557;
+}
+
+.btn-primary {
+  @apply bg-tura-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all duration-200 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply bg-white text-tura-dark px-6 py-3 rounded-lg font-semibold border-2 border-tura-dark hover:bg-tura-light transition-all duration-200;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-tura-red focus:ring-2 focus:ring-red-200 outline-none transition-all duration-200;
+}
